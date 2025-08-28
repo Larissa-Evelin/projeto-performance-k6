@@ -1,11 +1,10 @@
 name: Performance Tests
 
-# Executa o workflow em push para qualquer branch
 on:
   push:
     branches:
       - '**'  # qualquer branch
-  pull_request:  # opcional, também executa em PR
+  pull_request:
     branches:
       - '**'
 
@@ -18,22 +17,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Instala o k6
+      # 2. Instala o k6 via Snap
       - name: Install k6
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gnupg software-properties-common
-          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
-          sudo add-apt-repository ppa:k6io/k6
-          sudo apt-get update
-          sudo apt-get install -y k6
+          sudo snap install k6
 
-      # 3. Executa os testes de performance
-      - name: Run k6 tests
-        run: |
-          k6 run ./k6-tests/performance/homepage_perf.js
-          k6 run ./k6-tests/performance/category_perf.js
-          k6 run ./k6-tests/performance/product_perf.js
-          k6 run ./k6-tests/performance/cart_perf.js
-          k6 run ./k6-tests/performance/checkout_perf.js
-          k6 run ./k6-tests/performance/login_perf.js
+      # 3. Dá permissão de execução ao script
+      - name: Make test script executable
+        run: chmod +x ./run_all.sh
+
+      # 4. Executa todos os testes via script
+      - name: Run all performance tests
+        run: ./run_all.sh
