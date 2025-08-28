@@ -7,10 +7,10 @@ Realizar testes de performance na aplicação [Magento 2 Demo](https://magento2-
 
 Cada script define:
 
-- **Virtual Users (VUs):** Número de usuários virtuais simultâneos.
+- **Virtual Users (VUs):** Número de usuários virtuais simultâneos
 - **Duração:** Tempo total do teste.
-- **Checks:** Validações de status HTTP (ex.: `status === 200`).
-- **Sleep:** Intervalo entre interações do VU para simular comportamento real.
+- **Checks:** Validações de status HTTP (ex.: `status === 200`)
+- **Sleep:** Intervalo entre interações do VU para simular comportamento real
 
 Rodar um teste específico: k6 run ./k6-tests/performance/product_perf.js
 
