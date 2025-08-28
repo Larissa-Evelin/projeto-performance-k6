@@ -20,13 +20,13 @@ Rodar todos os testes sequenciais: ./run_all.sh
 
 Após a execução, o k6 exibe:
 
-Checks: Sucesso ou falha das validações.
+Checks: Sucesso ou falha das validações
 
-HTTP Metrics: Tempo de resposta médio, mínimo, máximo e percentis.
+HTTP Metrics: Tempo de resposta médio, mínimo, máximo e percentis
 
-Iterations: Quantas vezes o script foi executado.
+Iterations: Quantas vezes o script foi executado
 
-VUs: Número de usuários virtuais ativos durante o teste.
+VUs: Número de usuários virtuais ativos durante o teste
 
-Network: Quantidade de dados enviados e recebidos.
+Network: Quantidade de dados enviados e recebidos
 
